@@ -7,8 +7,14 @@ const app = express();
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("hello");
+});
+
 app.post("/room", (req, res) => {
     res.json({
         message: "Hello",
     });
 });
+
+app.listen(PORT, () => console.log(`listening on port ${PORT}`))
